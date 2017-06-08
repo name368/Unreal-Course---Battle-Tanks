@@ -1,7 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BattleTanks.h"
+#include "Tank.h"
 #include "TankPlayerController.h"
+
+class ATank;
 
 void ATankPlayerController::Tick(float DeltaTime)
 {
