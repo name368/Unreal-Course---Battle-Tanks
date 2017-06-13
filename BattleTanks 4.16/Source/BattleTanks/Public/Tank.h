@@ -8,6 +8,7 @@
 //Forward declarations
 class UTankBarrel;
 class UTankAimingComponent;
+class AProjectile;
 
 UCLASS()
 class BATTLETANKS_API ATank : public APawn
@@ -39,6 +40,11 @@ private:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UPROPERTY(EditAnywhere, Category = Setup)
+	TSubclassOf<AProjectile> ProjectileBlueprint;
+
+	UTankBarrel* Barrel = nullptr;
 
 public:
 	/**Projectile launch speed, how far projectile can be shot*/
