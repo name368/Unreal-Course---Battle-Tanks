@@ -16,7 +16,7 @@ class BATTLETANKS_API ATank : public APawn
 	GENERATED_BODY()
 
 public:
-	void AimAt(FVector HitLocation, float LaunchSpeed);
+	void AimAt(FVector HitLocation);// , float LaunchSpeed);
 
 	UFUNCTION(BlueprintCallable, Category = Firing)
 	void Fire();
@@ -45,6 +45,10 @@ private:
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	UTankBarrel* Barrel = nullptr;
+
+	float ReloadTimeInSeconds = 3;
+
+	double LastFireTime = 0;
 
 public:
 	/**Projectile launch speed, how far projectile can be shot*/
