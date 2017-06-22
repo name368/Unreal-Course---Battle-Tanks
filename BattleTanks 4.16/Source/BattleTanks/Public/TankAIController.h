@@ -22,5 +22,7 @@ private:
 	ATank* GetControlledTank() const;
 
 	virtual void Tick(float DeltaSeconds) override;
+
+	float AcceptanceRadius = 3000;
 	
 };
