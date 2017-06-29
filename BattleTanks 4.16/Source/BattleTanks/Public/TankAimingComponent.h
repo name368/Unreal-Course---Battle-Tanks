@@ -48,4 +48,8 @@ private:
 	UTankTurret* Turret = nullptr;
 	void MoveBarrelTowards(FVector AimDirection);
 
+	/**Projectile launch speed, how far projectile can be shot*/
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 10000.0;
+
 };

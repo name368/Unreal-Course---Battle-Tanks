@@ -47,7 +47,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation)
 		OutLaunchVelocity,
 		StartLocation,
 		HitLocation,
-		10000,
+		LaunchSpeed,
 		false,
 		0,
 		0,
