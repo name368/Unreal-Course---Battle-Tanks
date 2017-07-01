@@ -42,15 +42,14 @@ protected:
 	EFiringState FiringState = EFiringState::Reloading;
 
 public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
 	void AimAt(FVector HitLocation);// , float LaunchSpeed);
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
 private:
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
 	void MoveBarrelTowards(FVector AimDirection);
+	bool IsBarrelMoving();
 
 	/**Projectile launch speed, how far projectile can be shot*/
 	UPROPERTY(EditAnywhere, Category = Firing)
@@ -63,4 +62,6 @@ private:
 	float ReloadTimeInSeconds = 3;
 
 	double LastFireTime = 0;
+
+	FVector AimDirection;
 };
