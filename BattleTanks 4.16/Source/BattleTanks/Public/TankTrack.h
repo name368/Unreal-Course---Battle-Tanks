@@ -18,7 +18,12 @@ public:
 	//Sets throttle between -1 and +1
 	UFUNCTION(BlueprintCallable, Category = Input)
 	void SetThrottle(float Throttle);
-	
+
 	UPROPERTY(EditDefaultsOnly)
 	float TrackMaxDrivingForce = 400000;
+
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
+
+private:
+	UTankTrack();
 };
