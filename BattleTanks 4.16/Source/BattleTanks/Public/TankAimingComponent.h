@@ -71,7 +71,7 @@ private:
 
 	double LastFireTime = 0;
 
-	FVector AimDirection;
+	FVector AimAtDirection;
 
 	int RoundsLeft = 3;
 };
